@@ -226,6 +226,7 @@ if ($apply && $coreAccepted !== []) {
     file_put_contents(ROOT . '/signatures.json', json_encode($current, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . "\n");
     writeChecksum(ROOT . '/signatures.json');
     echo "Added to signatures.json (version {$current['version']}) and refreshed " . CHECKSUM_FILE_NAME . ".\n";
+    echo "Once it's on main, approve the \"Sign signatures feed\" run in GitHub Actions (or sign locally: php scripts/sign.php sign <secret-key-file>).\n";
 } elseif (!$apply) {
     echo "Not applied. Re-run with --apply to add the accepted signatures.\n";
 }

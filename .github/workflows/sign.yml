@@ -1,0 +1,101 @@
+name: Sign signatures feed
+
+# Signs signatures.json whenever it changes on main, so a release needs nothing but a merge and
+# one click. The signing key is a secret on the "feed-release" GitHub Environment, which requires
+# a maintainer's approval before any job can read it - so nothing gets signed (and nothing
+# reaches client stores) without that approval, even if someone manages to push to main or edit
+# this workflow. See docs in README.md ("Signing and releasing").
+#
+# It signs exactly the commit that triggered the run (the one the approver was shown), and only
+# pushes the signature back if main hasn't moved since - otherwise it fails rather than sign
+# something nobody reviewed.
+
+on:
+  push:
+    branches: [main]
+    paths: [signatures.json]
+  workflow_dispatch: {}
+
+concurrency:
+  group: sign-feed
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+
+      - run: php scripts/validate_signatures.php
+      - run: php scripts/checksum.php verify
+
+      # What the approver is about to sign, shown on the run's summary page.
+      - name: Summarise release
+        run: |
+          {
+            echo "### Feed release awaiting signature"
+            echo ""
+            echo "- Commit: \`${GITHUB_SHA}\`"
+            echo "- Version: \`$(php -r 'echo json_decode(file_get_contents("signatures.json"), true)["version"] ?? "?";')\`"
+            echo "- Signatures: $(php -r 'echo count(json_decode(file_get_contents("signatures.json"), true)["signatures"] ?? []);')"
+            echo ""
+            echo "Review the commit before approving: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/commit/${GITHUB_SHA}"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  sign:
+    needs: validate
+    runs-on: ubuntu-latest
+    # Pauses here until a required reviewer approves; only then is SIGNING_KEY readable.
+    environment: feed-release
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+
+      - name: Skip if already signed
+        id: check
+        run: |
+          if php scripts/sign.php verify; then
+            echo "signed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Sign
+        if: steps.check.outputs.signed != 'true'
+        env:
+          SIGNING_KEY: ${{ secrets.SIGNING_KEY }}
+        run: |
+          if [ -z "$SIGNING_KEY" ]; then
+            echo "::error::SIGNING_KEY is not set on the feed-release environment."
+            exit 1
+          fi
+          umask 077
+          key_file="$RUNNER_TEMP/signing.key"
+          printf '%s\n' "$SIGNING_KEY" > "$key_file"
+          php scripts/sign.php sign "$key_file"
+          rm -f "$key_file"
+          php scripts/sign.php verify
+
+      - name: Commit signature
+        if: steps.check.outputs.signed != 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add signatures.json.sig
+          version=$(php -r 'echo json_decode(file_get_contents("signatures.json"), true)["version"] ?? "";')
+          git commit -m "Sign signatures.json ${version}"
+          # Fast-forward only: if main moved after this run started, refuse rather than
+          # publish a signature for a commit the approver didn't see on top of newer changes.
+          git push origin "HEAD:refs/heads/main"

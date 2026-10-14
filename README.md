@@ -73,6 +73,48 @@ anything about content its author never thought to try.
 php scripts/validate_signatures.php
 ```
 
+## Signing and releasing
+
+The module only accepts a feed whose Ed25519 signature verifies against a public key pinned in
+the module itself (`SignatureFeedFetcher::TRUSTED_KEYS`). That's what lets a new signature set
+reach every store the moment it lands on `main`, with no module update - while still meaning
+nobody who can merely push to this repo (or tamper with the file in transit) can ship rules to
+client stores. The SHA-256 sidecar is kept for older module versions, but it only catches a
+corrupted download; anyone who can edit `signatures.json` can regenerate it.
+
+Releasing is done by `.github/workflows/sign.yml`. When a change to `signatures.json` lands
+on `main` it validates the set, then waits for a maintainer to approve the `feed-release`
+GitHub Environment; only then can the job read the signing key (an Environment secret), sign
+that exact commit and push `signatures.json.sig` back to `main`. Nothing is signed - and so
+nothing reaches client stores - without that approval, even if someone manages to push to
+`main` or edit the workflow. Check the commit linked from the run summary before approving.
+
+So a release is:
+
+```bash
+php scripts/validate_signatures.php
+php scripts/checksum.php write
+git add signatures.json signatures.json.sha256 && git commit && git push   # or merge a PR
+# then approve the "Sign signatures feed" run in GitHub Actions
+```
+
+Signing locally still works (e.g. if Actions is unavailable) - the workflow skips signing when
+the pushed signature already verifies:
+
+```bash
+php scripts/sign.php sign /path/to/secret.key   # or STACKGAUGE_SIGNING_KEY_FILE
+```
+
+The secret key is never committed (`*.key` is gitignored). Public keys live in
+`signing-keys/<key id>.pub`.
+
+The module also refuses a feed whose `version` is older than the one it has already cached, so
+an old (validly signed) feed can't be replayed to roll detections back - always bump `version`.
+
+To rotate keys: `php scripts/sign.php keygen <new-key-id> <secret-key-file>`, add the new public
+key to the module's `TRUSTED_KEYS` alongside the old one and release the module, then start
+signing with the new key once stores have updated. Drop the old key from the module later.
+
 ## Keeping the set current
 
 Two parts keep the set up to date.

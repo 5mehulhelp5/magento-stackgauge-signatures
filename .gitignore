@@ -8,3 +8,6 @@ Thumbs.db
 # Drafting workspace for the magento-rule-author skill. Only accepted signatures reach the repo.
 /data/drafts/
 /data/sources/
+
+# Ed25519 signing secret keys (see scripts/sign.php) - must never be committed.
+*.key
