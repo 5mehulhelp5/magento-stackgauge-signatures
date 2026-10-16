@@ -4,7 +4,9 @@
  * against public keys pinned in the module itself. The SHA-256 sidecar (see checksum.php) only
  * proves the file wasn't corrupted in transit - anyone able to change signatures.json in this
  * repo can regenerate it too. The signature is what proves a release came from a holder of the
- * private signing key, which is kept offline and never stored in this repo or in CI.
+ * private signing key, which is never stored in this repo. It lives as the SIGNING_KEY secret on the
+ * approval-gated "feed-release" GitHub Environment (see .github/workflows/sign.yml), readable by a job
+ * only after a required reviewer approves, plus an offline backup held by the maintainer.
  *
  * signatures.json.sig is JSON: {"algorithm": "ed25519", "key_id": "...", "signature": "<base64>"},
  * the detached signature over the exact bytes of signatures.json. key_id names a public key under
