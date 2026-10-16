@@ -1,5 +1,5 @@
 {
-    "last_run": "2026-10-14",
+    "last_run": "2026-10-16",
     "sources": {
         "https://blog.sucuri.net/2024/11/credit-card-skimmer-malware-targeting-magento-checkout-pages.html": {
             "first_seen": "2026-10-05",
@@ -724,6 +724,10 @@
         "https://thehackernews.com/2026/10/cyberxero-uses-claude-code-in-campaign.html": {
             "first_seen": "2026-10-12",
             "outcome": "skipped: not about Magento"
+        },
+        "https://sansec.io/research/blockstrap-magento-rce": {
+            "first_seen": "2026-10-16",
+            "outcome": "read: 0 indicator(s)"
         }
     }
 }
