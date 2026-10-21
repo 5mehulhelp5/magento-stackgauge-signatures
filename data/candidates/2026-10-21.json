@@ -1,0 +1,30 @@
+[
+    {
+        "url": "https://sansec.io/research/php2shell",
+        "date": "2026-10-20",
+        "title": "",
+        "feedText": "",
+        "indicators": [
+            {
+                "kind": "domain",
+                "text": "calif.io",
+                "context": "Calif.IO"
+            },
+            {
+                "kind": "file",
+                "text": "release.PHP",
+                "context": "release.PHP"
+            },
+            {
+                "kind": "file",
+                "text": "by.PHP",
+                "context": "by.PHP"
+            },
+            {
+                "kind": "file",
+                "text": "released.PHP",
+                "context": "released.PHP"
+            }
+        ]
+    }
+]
