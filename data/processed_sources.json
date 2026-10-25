@@ -1,5 +1,5 @@
 {
-    "last_run": "2026-10-24",
+    "last_run": "2026-10-25",
     "sources": {
         "https://blog.sucuri.net/2024/11/credit-card-skimmer-malware-targeting-magento-checkout-pages.html": {
             "first_seen": "2026-10-05",
@@ -732,6 +732,10 @@
         "https://sansec.io/research/php2shell": {
             "first_seen": "2026-10-21",
             "outcome": "read: 4 indicator(s)"
+        },
+        "https://sansec.io/research/magento-cms-block-loader-deepveindrilling": {
+            "first_seen": "2026-10-25",
+            "outcome": "read: 36 indicator(s)"
         }
     }
 }
